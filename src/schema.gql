@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Products {
+  id: ID!
+  name: String!
+  manufacturer: String!
+  stock: Float!
+  value: Float!
+}
+
+type Query {
+  products: [Products!]!
+  product(id: String!): Products!
+  qtdProducts: Float!
+  getMinStock: [Products!]!
+  getMaxStock: [Products!]!
+  getNoStock: [Products!]!
+}
+
+type Mutation {
+  createProduct(data: CreateProductInput!): Products!
+  updateProduct(data: UpdateProductInput!, id: String!): Products!
+  deleteProduct(id: String!): Boolean!
+}
+
+input CreateProductInput {
+  name: String!
+  manufacturer: String!
+  stock: Float!
+  value: Float!
+}
+
+input UpdateProductInput {
+  name: String!
+  manufacturer: String!
+  stock: Float!
+  value: Float!
+}
